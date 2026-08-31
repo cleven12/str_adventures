@@ -1,0 +1,62 @@
+{
+  "name": "structured_advent",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "pnpm@9.15.9",
+  "description": "Structured Adventures — Payload CMS + Next.js headless platform for a Tanzania safari & Kilimanjaro tour operator (Catalog + Content + Mesh + Trust, no Commerce)",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "payload": "payload",
+    "generate:types": "payload generate:types",
+    "generate:importmap": "payload generate:importmap",
+    "seed": "tsx src/lib/seed.ts",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@base-ui/react": "^1.5.0",
+    "@payloadcms/db-postgres": "3.88.0",
+    "@payloadcms/next": "3.88.0",
+    "@payloadcms/plugin-cloud-storage": "3.88.0",
+    "@payloadcms/richtext-lexical": "3.88.0",
+    "@vercel/analytics": "1.6.1",
+    "class-variance-authority": "^0.7.1",
+    "cloudinary": "^2.10.1",
+    "clsx": "^2.1.1",
+    "date-fns": "^4.4.0",
+    "embla-carousel-react": "^8.6.0",
+    "framer-motion": "^13.1.1",
+    "graphql": "^16.9.0",
+    "lucide-react": "^1.16.0",
+    "maplibre-gl": "^6.6.0",
+    "next": "16.3.0",
+    "payload": "3.88.0",
+    "react": "19.2.6",
+    "react-dom": "19.2.6",
+    "shadcn": "^4.8.0",
+    "sharp": "0.34.2",
+    "tailwind-merge": "^3.3.1",
+    "tw-animate-css": "^1.4.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.16.0",
+    "@tailwindcss/postcss": "^4.3.3",
+    "@types/node": "22.19.9",
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3",
+    "eslint": "^9.16.0",
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "postcss": "^8.5",
+    "tailwindcss": "^4.3.3",
+    "tsx": "^4.19.2",
+    "typescript": "5.7.3",
+    "typescript-eslint": "^8.18.0",
+    "vitest": "^3.2.4"
+  },
+  "engines": {
+    "node": ">=20.9.0",
+    "pnpm": "^9 || ^10 || ^11"
+  }
+}

@@ -1,0 +1,16 @@
+packages:
+  - "."
+
+allowBuilds:
+  esbuild: true
+  sharp: true
+  unrs-resolver: true
+  workerd: true
+
+onlyBuiltDependencies:
+  - sharp
+  - esbuild
+  - unrs-resolver
+
+overrides:
+  hono: 4.12.25
