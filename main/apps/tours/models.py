@@ -462,9 +462,9 @@ class Tour(models.Model):
         Targets TouristTrip and Product schemas.
         """
         from django.conf import settings
-        domain = getattr(settings, 'SITE_DOMAIN', 'visitkili.com')
+        domain = getattr(settings, 'SITE_DOMAIN', 'safari pro.com')
         url = f"https://{domain}{self.get_absolute_url()}"
-        
+
         # Base TouristTrip / Product schema
         data = {
             "@context": "https://schema.org",
@@ -488,7 +488,7 @@ class Tour(models.Model):
                 "url": url
             }
         }
-        
+
         # Add AggregateRating if reviews exist
         avg = self.average_rating
         count = self.total_reviews
@@ -501,15 +501,15 @@ class Tour(models.Model):
                 "worstRating": "1"
             }
             # Note: Do NOT include 'itemReviewed' here when nested inside Product/TouristTrip
-        
+
         # Add tour-specific details
         if self.tour_type == 'safari' and self.lodge_level:
             data["touristType"] = f"{self.get_lodge_level_display()} Safari"
-            
+
         # Merge manually added structured data
         if self.structured_data:
             data.update(self.structured_data)
-            
+
         return data
 
     def get_breadcrumb_schema(self):
@@ -517,9 +517,9 @@ class Tour(models.Model):
         Generate BreadcrumbList JSON-LD.
         """
         from django.conf import settings
-        domain = getattr(settings, 'SITE_DOMAIN', 'visitkili.com')
+        domain = getattr(settings, 'SITE_DOMAIN', 'safari pro.com')
         base_url = f"https://{domain}"
-        
+
         return {
             "@context": "https://schema.org",
             "@type": "BreadcrumbList",
