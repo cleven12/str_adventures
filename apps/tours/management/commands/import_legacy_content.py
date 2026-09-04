@@ -5,7 +5,7 @@ current Django ORM models.
 
 Usage:
     python manage.py import_legacy_content --db-host=localhost --db-port=33306 \
-        --db-name=visitkili_v2 --db-user=visitkili_dev --db-password=pass123
+        --db-name=safari pro_v2 --db-user=safari pro_dev --db-password=pass123
 
     Add --dry-run to preview counts without writing anything.
     Add --clear to wipe existing ORM rows before importing (safe for a
@@ -26,8 +26,8 @@ class Command(BaseCommand):
         db = settings.DATABASES["default"]
         parser.add_argument("--db-host",     default=db.get("HOST", "localhost"))
         parser.add_argument("--db-port",     default=int(db.get("PORT", 33306)), type=int)
-        parser.add_argument("--db-name",     default=db.get("NAME", "visitkili_v2_dev"))
-        parser.add_argument("--db-user",     default=db.get("USER", "visitkili_dev"))
+        parser.add_argument("--db-name",     default=db.get("NAME", "safari pro_v2_dev"))
+        parser.add_argument("--db-user",     default=db.get("USER", "safari pro_dev"))
         parser.add_argument("--db-password", default=db.get("PASSWORD", "pass123"))
         parser.add_argument("--dry-run",     action="store_true")
         parser.add_argument("--clear",       action="store_true",
