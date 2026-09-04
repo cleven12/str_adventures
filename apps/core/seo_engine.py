@@ -23,7 +23,7 @@ from django.utils.html import strip_tags
 from django.urls import reverse
 
 
-DOMAIN = getattr(settings, 'SITE_DOMAIN', 'visitkili.com')
+DOMAIN = getattr(settings, 'SITE_DOMAIN', 'safari pro.com')
 BASE_URL = f"https://{DOMAIN}"
 BRAND = getattr(settings, 'SITE_NAME', 'VISIT KILI ADVENTURES')
 WHATSAPP = getattr(settings, 'WHATSAPP_NUMBER', '+255741788255')
@@ -58,8 +58,8 @@ def get_organization_schema() -> dict:
             "availableLanguage": ["English", "Swahili"]
         },
         "sameAs": [
-            "https://www.instagram.com/visitkili",
-            "https://www.facebook.com/visitkili",
+            "https://www.instagram.com/safari pro",
+            "https://www.facebook.com/safari pro",
             f"https://wa.me/{WHATSAPP.replace('+','').replace(' ','')}"
         ]
     }
