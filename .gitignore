@@ -6,6 +6,7 @@ build/
 .env.local
 .env*.local
 *.log
+venv
 .DS_Store
 .vercel/
 *.db
