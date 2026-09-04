@@ -210,7 +210,6 @@ USE_TZ        = True
 # ── Static & media ──────────────────────────────────────────────────────────────
 STATIC_URL  = config('STATIC_URL',  default='/static/')
 STATIC_ROOT = config('STATIC_ROOT', default=str(BASE_DIR / 'staticfiles'))
-STATICFILES_DIRS = [BASE_DIR / 'static']
 WHITENOISE_USE_FINDERS    = DEBUG
 WHITENOISE_MANIFEST_STRICT = False
 WHITENOISE_AUTOREFRESH    = DEBUG

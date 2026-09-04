@@ -1,5 +1,4 @@
 from django.db import models
-from django.urls import reverse
 from cloudinary.models import CloudinaryField
 
 class DestinationCategory(models.Model):
@@ -67,17 +66,11 @@ class Destination(models.Model):
             score += 10
         return min(100, score)
 
-    def get_absolute_url(self):
-        return reverse('destinations:detail', kwargs={'slug': self.slug})
-
-    def has_complete_seo(self):
-        return bool(self.focus_keyword and self.meta_title)
-
     def __str__(self):
         return self.name
 
     def get_absolute_url(self):
-        return reverse('destinations:detail', kwargs={'slug': self.slug})
+        return f"/destinations/{self.slug}/"
 
     def has_complete_seo(self) -> bool:
         return bool(self.focus_keyword and self.meta_title and self.meta_description)

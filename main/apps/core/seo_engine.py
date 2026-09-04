@@ -20,11 +20,11 @@ import json
 from datetime import datetime
 from django.conf import settings
 from django.utils.html import strip_tags
-from django.urls import reverse
 
 
-DOMAIN = getattr(settings, 'SITE_DOMAIN', 'safari pro.com')
-BASE_URL = f"https://{DOMAIN}"
+# Schema.org / canonical URLs point at the public frontend (Next.js), not this
+# API backend — this app no longer serves any public-facing page itself.
+BASE_URL = getattr(settings, 'FRONTEND_URL', 'http://localhost:3000')
 BRAND = getattr(settings, 'SITE_NAME', 'VISIT KILI ADVENTURES')
 WHATSAPP = getattr(settings, 'WHATSAPP_NUMBER', '+255741788255')
 

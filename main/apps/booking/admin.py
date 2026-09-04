@@ -132,8 +132,8 @@ class BookingAdmin(admin.ModelAdmin):
     dpo_url_set.short_description = 'DPO Link'
 
     def client_status_url(self, obj):
-        url = obj.get_confirm_url()
-        full = f"https://{__import__('django.conf', fromlist=['settings']).settings.SITE_DOMAIN}{url}"
+        from django.conf import settings
+        full = f"{settings.FRONTEND_URL}{obj.get_confirm_url()}"
         return format_html('<a href="{}" target="_blank">{}</a>', full, full)
     client_status_url.short_description = 'Client Status Page'
 

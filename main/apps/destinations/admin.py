@@ -51,7 +51,7 @@ class DestinationAdmin(GoogleIndexingActionMixin, ModelAdmin):
         from django.conf import settings
         count = 0
         for destination in queryset.filter(is_active=True):
-            url = f"https://{settings.SITE_DOMAIN}{destination.get_absolute_url()}"
+            url = f"{settings.FRONTEND_URL}{destination.get_absolute_url()}"
             if ping_google_and_update(destination, url):
                 count += 1
         messages.success(request, f"Pinged Google for {count} destination(s).")

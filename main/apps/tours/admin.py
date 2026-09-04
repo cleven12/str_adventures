@@ -291,7 +291,7 @@ class TourAdmin(GoogleIndexingActionMixin, ModelAdmin):
         from django.conf import settings
         count = 0
         for tour in queryset.filter(is_active=True):
-            url = f"https://{settings.SITE_DOMAIN}{tour.get_absolute_url()}"
+            url = f"{settings.FRONTEND_URL}{tour.get_absolute_url()}"
             if ping_google_and_update(tour, url):
                 count += 1
         messages.success(request, f"Pinged Google for {count} tour(s).")
@@ -332,7 +332,7 @@ class ComboPackageAdmin(GoogleIndexingActionMixin, ModelAdmin):
         from django.conf import settings
         count = 0
         for combo in queryset.filter(is_active=True):
-            url = f"https://{settings.SITE_DOMAIN}{combo.get_absolute_url()}"
+            url = f"{settings.FRONTEND_URL}{combo.get_absolute_url()}"
             if ping_google_and_update(combo, url):
                 count += 1
         messages.success(request, f"Pinged Google for {count} combo package(s).")

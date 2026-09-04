@@ -1,7 +1,5 @@
 # apps/booking/api_views.py
-# Write endpoints for booking enquiries, group-join requests and contact —
-# ported from apps/booking/views.py's form-POST logic, JSON in/out instead of
-# rendered templates. No payment gateway calls — see BACKEND_README.md.
+# Write endpoints for booking enquiries, group-join requests and contact.
 
 import logging
 

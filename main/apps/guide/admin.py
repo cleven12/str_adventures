@@ -167,7 +167,7 @@ class TrekGuideAdmin(GoogleIndexingActionMixin, ModelAdmin):
         from django.conf import settings
         count = 0
         for guide in queryset.filter(is_published=True):
-            url = f"https://{settings.SITE_DOMAIN}{guide.get_absolute_url()}"
+            url = f"{settings.FRONTEND_URL}{guide.get_absolute_url()}"
             if ping_google_and_update(guide, url):
                 count += 1
         messages.success(request, f"Pinged Google for {count} guide(s).")
@@ -222,7 +222,7 @@ class BlogArticleAdmin(GoogleIndexingActionMixin, ModelAdmin):
         from django.conf import settings
         count = 0
         for article in queryset.filter(status='published'):
-            url = f"https://{settings.SITE_DOMAIN}{article.get_absolute_url()}"
+            url = f"{settings.FRONTEND_URL}{article.get_absolute_url()}"
             if ping_google_and_update(article, url):
                 count += 1
         messages.success(request, f"Pinged Google for {count} article(s).")

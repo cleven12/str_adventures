@@ -15,8 +15,8 @@ from apps.core.seo_engine import (
     build_faq_schema,
 )
 
-DOMAIN = getattr(settings, 'SITE_DOMAIN', 'structuredadventures.com')
-BASE_URL = f"https://{DOMAIN}"
+# Canonical URLs point at the public frontend (Next.js), not this API backend.
+BASE_URL = getattr(settings, 'FRONTEND_URL', 'http://localhost:3000')
 
 
 # ── Helpers ────────────────────────────────────────────────────────────────────

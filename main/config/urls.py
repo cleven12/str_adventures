@@ -30,12 +30,6 @@ urlpatterns = [
     path('ckeditor5/',    include('django_ckeditor_5.urls')),
     path('sitemap.xml',   sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
     path('api/v1/',       include(api_urlpatterns)),
-    path('',              include('apps.core.urls',         namespace='core')),
-    path('tours/',        include('apps.tours.urls',        namespace='tours')),
-    path('guides/',       include('apps.guide.urls',        namespace='guide')),
-    path('destinations/', include('apps.destinations.urls', namespace='destinations')),
-    path('booking/',      include('apps.booking.urls',      namespace='booking')),
-    path('reviews/',      include('apps.reviews.urls',      namespace='reviews')),
 ]
 
 if settings.DEBUG:

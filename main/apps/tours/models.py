@@ -3,7 +3,6 @@
 # Booking, Payment, Reviews live in their own apps
 
 from django.db import models
-from django.urls import reverse
 from django.utils.text import slugify
 from django.utils.crypto import get_random_string
 from django.core.exceptions import ValidationError
@@ -77,7 +76,7 @@ class Tag(models.Model):
         super().save(*args, **kwargs)
 
     def get_absolute_url(self):
-        return reverse('tours:tag_page', kwargs={'slug': self.slug})
+        return f"/tours/tag/{self.slug}/"
 
     @property
     def seo_score(self):
@@ -119,7 +118,7 @@ class TourCategory(models.Model):
         super().save(*args, **kwargs)
 
     def get_absolute_url(self):
-        return reverse('tours:category_page', kwargs={'slug': self.slug})
+        return f"/tours/category/{self.slug}/"
 
 
 # ============================================================
@@ -402,10 +401,6 @@ class Tour(models.Model):
     def __str__(self):
         return self.title
 
-    def get_absolute_url(self):
-        from django.urls import reverse
-        return reverse('tours:detail', kwargs={'slug': self.slug})
-
     def get_meta_title(self):
         return self.meta_title or self.title
 
@@ -454,7 +449,7 @@ class Tour(models.Model):
         super().save(*args, **kwargs)
 
     def get_absolute_url(self):
-        return reverse('tours:tour_detail', kwargs={'slug': self.slug})
+        return f"/tours/{self.slug}/"
 
     def get_structured_data(self):
         """
@@ -798,7 +793,7 @@ class ComboPackage(models.Model):
         super().save(*args, **kwargs)
 
     def get_absolute_url(self):
-        return reverse('tours:combo_detail', kwargs={'slug': self.slug})
+        return f"/tours/combos/{self.slug}/"
 
     @property
     def price_usd(self):

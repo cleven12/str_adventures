@@ -12,7 +12,6 @@
 
 import uuid
 from django.db import models
-from django.urls import reverse
 from django.utils import timezone
 from django.utils.text import slugify
 from django.utils.crypto import get_random_string
@@ -125,7 +124,7 @@ class GroupDeparture(models.Model):
         super().save(*args, **kwargs)
 
     def get_absolute_url(self):
-        return reverse('booking:group_detail', kwargs={'slug': self.slug})
+        return f"/booking/groups/{self.slug}/"
 
     # ── Computed properties ────────────────────────────────────────────────────
 
@@ -508,10 +507,7 @@ class Booking(models.Model):
         ])
 
     def get_confirm_url(self):
-        return reverse(
-            'booking:booking_confirm',
-            kwargs={'booking_ref': self.booking_ref, 'secure_token': self.secure_token}
-        )
+        return f"/booking/status/{self.booking_ref}/{self.secure_token}/"
 
 
 # ==============================================================================

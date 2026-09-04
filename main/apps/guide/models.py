@@ -4,7 +4,6 @@
 # excerpts, internal links, and structured cross-references.
 
 from django.db import models
-from django.urls import reverse
 from django.utils import timezone
 from django.utils.text import slugify
 from django.core.exceptions import ValidationError
@@ -47,7 +46,7 @@ class GuideCategory(models.Model):
         super().save(*args, **kwargs)
 
     def get_absolute_url(self):
-        return reverse('guide:category', kwargs={'slug': self.slug})
+        return f"/guides/category/{self.slug}/"
 
 
 # ============================================================
@@ -233,7 +232,7 @@ class TrekGuide(models.Model):
         super().save(*args, **kwargs)
 
     def get_absolute_url(self):
-        return reverse('guide:detail', kwargs={'slug': self.slug})
+        return f"/guides/{self.slug}/"
 
     def get_structured_data(self):
         """
@@ -476,7 +475,7 @@ class BlogArticle(models.Model):
         super().save(*args, **kwargs)
 
     def get_absolute_url(self):
-        return reverse('guide:article_detail', kwargs={'slug': self.slug})
+        return f"/guides/articles/{self.slug}/"
 
     def get_meta_title(self):
         return self.meta_title or self.title

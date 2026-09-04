@@ -1,32 +1,35 @@
 from django.contrib.sitemaps import Sitemap
-from django.urls import reverse
 from apps.tours.models import Tour, Tag, ComboPackage
 from apps.guide.models import TrekGuide, BlogArticle
 from apps.destinations.models import Destination
 from django.db.models import Q
 
 class StaticSitemap(Sitemap):
+    """
+    Static frontend page paths — hardcoded rather than reverse()'d, since
+    these pages are served by the Next.js frontend, not this API backend.
+    """
     priority = 0.5
     changefreq = 'monthly'
 
     def items(self):
         return [
-            'core:home',
-            'core:about',
-            'core:contact',
-            'core:faq',
-            'tours:tour_list',
-            'tours:search',
-            'tours:category_list',
-            'guide:guide_list',
-            'guide:article_list',
-            'destinations:list',
-            'booking:group_list',
-            'reviews:reviews_list',
+            '/',
+            '/about/',
+            '/contact/',
+            '/faq/',
+            '/tours/',
+            '/tours/search/',
+            '/tours/category/',
+            '/guides/trekking-guides/',
+            '/guides/articles/',
+            '/destinations/',
+            '/booking/groups/',
+            '/reviews/',
         ]
 
     def location(self, item):
-        return reverse(item)
+        return item
 
 class TourSitemap(Sitemap):
     changefreq = "weekly"

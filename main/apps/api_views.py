@@ -690,10 +690,19 @@ class GroupDepartureFilter(django_filters.FilterSet):
     tour   = django_filters.CharFilter(field_name="tour__slug")
     status = django_filters.CharFilter()
     badge  = django_filters.CharFilter(field_name="feature_badge")
+    month  = django_filters.CharFilter(method="filter_month")
 
     class Meta:
         model  = GroupDeparture
-        fields = ["tour", "status", "badge"]
+        fields = ["tour", "status", "badge", "month"]
+
+    def filter_month(self, queryset, name, value):
+        """?month=YYYY-MM — departures starting in that calendar month."""
+        try:
+            year, month = value.split("-")
+            return queryset.filter(start_date__year=int(year), start_date__month=int(month))
+        except (ValueError, AttributeError):
+            return queryset.none()
 
 
 class GroupDepartureViewSet(viewsets.ReadOnlyModelViewSet):

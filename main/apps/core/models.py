@@ -1,6 +1,5 @@
 from django.db import models
 from django_ckeditor_5.fields import CKEditor5Field
-from django.urls import reverse
 from cloudinary.models import CloudinaryField
 from cloudinary_storage.storage import RawMediaCloudinaryStorage
 
@@ -139,7 +138,7 @@ class JobPosting(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return reverse('core:career_detail', kwargs={'slug': self.slug})
+        return f"/careers/{self.slug}/"
 
 
 class ContactMessage(models.Model):
