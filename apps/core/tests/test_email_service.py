@@ -18,7 +18,7 @@ from apps.core.services.email_service import EmailService
     CONTACT_EMAIL='ops@example.com',
     STAFF_EMAILS=['ops@example.com', 'director@example.com'],
     SITE_NAME='VISIT KILI ADVENTURES',
-    SITE_DOMAIN='v2.visitkili.com',
+    SITE_DOMAIN='v2.safari pro.com',
     WHATSAPP_NUMBER='+255741788255',
 )
 class EmailServiceTests(TestCase):
