@@ -108,9 +108,10 @@ class RateLimitMiddleware:
 
             # Rate limit rules: (path_prefix, limit_per_hour, identifier)
             rules = [
-                ('/contact/', 3, ip, 'contact'),
+                ('/api/v1/contact/', 3, ip, 'contact'),
                 ('/ai-chat/message/', 20, request.session.session_key or ip, 'chat'),
-                ('/booking/', 10, ip, 'booking'),
+                ('/api/v1/bookings/', 10, ip, 'booking'),
+                ('/api/v1/group-departures/', 10, ip, 'group-join'),
             ]
 
             for prefix, limit, identifier, action in rules:

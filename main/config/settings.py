@@ -47,6 +47,9 @@ CUSTOM_APPS = [
 ]
 THIRD_PARTY_APPS = [
     'rest_framework',
+    'django_filters',
+    'drf_spectacular',
+    'corsheaders',
     'django_ckeditor_5',
     'django_countries',
     'cloudinary',
@@ -72,6 +75,7 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.gzip.GZipMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'apps.core.middleware.LegacyRedirectMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'apps.core.middleware.RateLimitMiddleware',
@@ -112,6 +116,61 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'config.wsgi.application'
+
+# ── Frontend (Next.js) ────────────────────────────────────────────────────────────
+FRONTEND_URL = config('FRONTEND_URL', default='http://localhost:3000')
+
+# ── CORS ────────────────────────────────────────────────────────────────────────
+CORS_ALLOWED_ORIGINS = [
+    o.strip()
+    for o in config(
+        'CORS_ALLOWED_ORIGINS',
+        default='http://localhost:3000,https://structuredadventures.com,https://www.structuredadventures.com',
+        cast=Csv(),
+    )
+    if o and o.strip()
+]
+CORS_ALLOW_CREDENTIALS = False  # API is public read — no cookies needed
+
+# ── Django REST Framework ─────────────────────────────────────────────────────────
+REST_FRAMEWORK = {
+    # Public read-only — no auth on GET endpoints
+    "DEFAULT_PERMISSION_CLASSES":    ["rest_framework.permissions.AllowAny"],
+    "DEFAULT_AUTHENTICATION_CLASSES": [],
+
+    # Filtering + search + ordering on all viewsets
+    "DEFAULT_FILTER_BACKENDS": [
+        "django_filters.rest_framework.DjangoFilterBackend",
+        "rest_framework.filters.SearchFilter",
+        "rest_framework.filters.OrderingFilter",
+    ],
+
+    # Auto OpenAPI schema generation
+    "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
+
+    # Standard pagination — overridden per viewset where needed
+    "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.PageNumberPagination",
+    "PAGE_SIZE": 12,
+
+    # Return JSON everywhere
+    "DEFAULT_RENDERER_CLASSES": ["rest_framework.renderers.JSONRenderer"],
+
+    # Throttle public endpoints (adjust for production)
+    "DEFAULT_THROTTLE_CLASSES": [
+        "rest_framework.throttling.AnonRateThrottle",
+    ],
+    "DEFAULT_THROTTLE_RATES": {
+        "anon": "300/hour",   # 300 requests/hour per IP
+    },
+}
+
+SPECTACULAR_SETTINGS = {
+    "TITLE":       "Structured Adventures API",
+    "DESCRIPTION": "Tanzania tour operator API — tours, guides, destinations, reviews.",
+    "VERSION":     "1.0.0",
+    "SERVE_INCLUDE_SCHEMA": False,
+    "COMPONENT_SPLIT_REQUEST": True,
+}
 
 # ── Database ────────────────────────────────────────────────────────────────────
 DB_ENGINE = config('DB_ENGINE', default='django.db.backends.sqlite3')

@@ -7,6 +7,9 @@ build/
 .env.local
 .env*.local
 *.log
+*.log.*
+logs/
+tmp/
 venv
 .DS_Store
 .vercel/
@@ -25,3 +28,5 @@ tsconfig.tsbuildinfo
 # AI coding agent config — not tracked in this repo.
 AGENTS.md
 CLAUDE.md
+.claude/
+.idea/

@@ -4,7 +4,7 @@ Crazy SEO Engine for VISIT KILI ADVENTURES.
 Central place for generating high-impact, Google-rich-result optimized structured data.
 
 Designed to maximize value from content produced by:
-- .claude/skills/seo-tour, seo-guide, seo-destination, seo-faq, seo-article
+- The SEO content pipeline (tour, guide, destination, FAQ, article authoring)
 - JSON imports into Tour, Destination, TrekGuide, BlogArticle, FAQ
 - Tag mesh + related content for topical authority
 
