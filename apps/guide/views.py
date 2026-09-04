@@ -84,7 +84,7 @@ def article_detail(request, slug):
         'url': request.build_absolute_uri(article.get_absolute_url()),
         'datePublished': article.publish_date.isoformat() if article.publish_date else '',
         'dateModified': article.updated_at.isoformat(),
-        'author': {'@type': 'Person', 'name': article.author.get_full_name() if article.author else 'VisitKili'},
+        'author': {'@type': 'Person', 'name': article.author.get_full_name() if article.author else 'safari pro'},
         'publisher': {'@type': 'Organization', 'name': 'VISIT KILI ADVNTURES'},
     }
     return render(request, 'guide/article_detail.html', {
