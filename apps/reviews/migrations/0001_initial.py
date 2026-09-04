@@ -57,7 +57,7 @@ class Migration(migrations.Migration):
                 ('travel_date', models.DateField(blank=True, help_text='Month/year of the actual trip', null=True)),
                 ('is_approved', models.BooleanField(default=False)),
                 ('is_featured', models.BooleanField(default=False)),
-                ('admin_response', models.TextField(blank=True, help_text='Optional public response from VisitKili team')),
+                ('admin_response', models.TextField(blank=True, help_text='Optional public response from safari pro team')),
                 ('created_at', models.DateTimeField(auto_now_add=True)),
                 ('updated_at', models.DateTimeField(auto_now=True)),
                 ('booking', models.OneToOneField(blank=True, help_text='Links review to a completed booking — ensures verified status', null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='review', to='booking.booking')),
