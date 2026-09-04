@@ -21,7 +21,7 @@ sa_full/
 │   │   ├── seo_engine.py ← full schema engine (unchanged)
 │   │   └── services/
 │   │       └── email_service.py ← REWRITTEN: no payment emails, DPO link emails added
-│   ├── tours/            ← UNCHANGED from visitkili (full SEO model)
+│   ├── tours/            ← UNCHANGED from safari pro (full SEO model)
 │   ├── guide/            ← UNCHANGED (TrekGuide, BlogArticle, mesh)
 │   ├── destinations/     ← UNCHANGED
 │   ├── itinerary/        ← UNCHANGED
@@ -34,7 +34,7 @@ sa_full/
 └── .env.example
 ```
 
-## What changed from visitkili
+## What changed from safari pro
 
 ### Removed entirely
 - `apps/ai_chat/` — not needed
@@ -78,7 +78,7 @@ Staff click "$ Mark Payment Confirmed" admin action
 | ✗ Reject selected join requests | group member reject |
 
 ### Booking model fields (new vs old)
-| Old (visitkili) | New (SA) |
+| Old (safari pro) | New (SA) |
 |-----------------|----------|
 | `payment_status` enum | `payment_confirmed` boolean |
 | `payment_transaction_token` | `dpo_payment_url` (staff paste) |
@@ -125,7 +125,7 @@ DPO_COMPANY_TOKEN=your-dpo-token   # kept for reference, no API calls
 ## Migrations
 
 The booking app has a hand-written migration (`0001_initial.py`).
-All other apps keep their existing migrations from visitkili.
+All other apps keep their existing migrations from safari pro.
 
 ```bash
 python manage.py migrate booking
