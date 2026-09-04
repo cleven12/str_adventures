@@ -1,10 +1,10 @@
 # Structured Adventures — Backend Re-engineering Notes
 
-## What Changed from visitkili
+## What Changed from safari pro
 
 ### Booking App — Complete Overhaul
 
-**Before (visitkili):**
+**Before (safari pro):**
 - Booking create → DPO API call → redirect to DPO payment page
 - PaymentTransaction model with gateway state machine
 - dpo_callback webhook endpoint (csrf_exempt)
@@ -111,7 +111,7 @@ python manage.py makemigrations booking
 python manage.py migrate
 ```
 
-Note: If migrating from existing visitkili DB:
+Note: If migrating from existing safari pro DB:
 - Old `payment_status` data will be lost (it's all 'pending' anyway for new site)
 - Old DPO token fields are gone — no issue for fresh deployment
 - Run on fresh DB: `python manage.py migrate` directly
