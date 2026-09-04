@@ -6,11 +6,11 @@ from cloudinary_storage.storage import RawMediaCloudinaryStorage
 
 class SiteSettings(models.Model):
     site_name = models.CharField(max_length=100, default="VISIT KILI ADVNTURES")
-    contact_email = models.EmailField(default="info@visitkili.com")
+    contact_email = models.EmailField(default="info@safari pro.com")
     contact_phone = models.CharField(max_length=20, default="+255...")
     whatsapp_number = models.CharField(max_length=20, blank=True)
     office_address = models.TextField(blank=True)
-    
+
     # Global Announcement / Holiday Widget
     show_announcement = models.BooleanField(default=False)
     announcement_text = models.CharField(max_length=255, blank=True)
@@ -34,7 +34,7 @@ class SiteSettings(models.Model):
         Generate JSON-LD for LocalBusiness / Organization.
         """
         from django.conf import settings
-        domain = getattr(settings, 'SITE_DOMAIN', 'visitkili.com')
+        domain = getattr(settings, 'SITE_DOMAIN', 'safari pro.com')
         return {
             "@context": "https://schema.org",
             "@type": "TravelAgency",
@@ -52,8 +52,8 @@ class SiteSettings(models.Model):
             },
             "sameAs": [
                 f"https://wa.me/{self.whatsapp_number.replace('+', '').replace(' ', '')}" if self.whatsapp_number else "",
-                "https://www.instagram.com/visitkili",
-                "https://www.facebook.com/visitkili"
+                "https://www.instagram.com/safari pro",
+                "https://www.facebook.com/safari pro"
             ]
         }
 
