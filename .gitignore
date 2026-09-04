@@ -9,6 +9,7 @@ build/
 venv
 .DS_Store
 .vercel/
+__pycache__/
 *.db
 *.db-*
 /media
