@@ -44,7 +44,7 @@ class TourReview(models.Model):
     is_featured     = models.BooleanField(default=False)
     admin_response  = models.TextField(
         blank=True,
-        help_text="Optional public response from VisitKili team"
+        help_text="Optional public response from safari pro team"
     )
 
     created_at  = models.DateTimeField(auto_now_add=True)
