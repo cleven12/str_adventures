@@ -240,9 +240,9 @@ class TrekGuide(models.Model):
         Generate JSON-LD for Article / HowTo.
         """
         from django.conf import settings
-        domain = getattr(settings, 'SITE_DOMAIN', 'visitkili.com')
+        domain = getattr(settings, 'SITE_DOMAIN', 'safari pro.com')
         url = f"https://{domain}{self.get_absolute_url()}"
-        
+
         return {
             "@context": "https://schema.org",
             "@type": self.schema_type,
@@ -251,7 +251,7 @@ class TrekGuide(models.Model):
             "image": self.featured_image.url if self.featured_image else "",
             "author": {
                 "@type": "Person",
-                "name": self.author.get_full_name() if self.author else "VisitKili Team"
+                "name": self.author.get_full_name() if self.author else "safari pro Team"
             },
             "publisher": {
                 "@type": "Organization",
@@ -270,9 +270,9 @@ class TrekGuide(models.Model):
         Generate BreadcrumbList JSON-LD.
         """
         from django.conf import settings
-        domain = getattr(settings, 'SITE_DOMAIN', 'visitkili.com')
+        domain = getattr(settings, 'SITE_DOMAIN', 'safari pro.com')
         base_url = f"https://{domain}"
-        
+
         return {
             "@context": "https://schema.org",
             "@type": "BreadcrumbList",
