@@ -72,7 +72,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('site_name', models.CharField(default='VISIT KILI ADVNTURES', max_length=100)),
-                ('contact_email', models.EmailField(default='info@visitkili.com', max_length=254)),
+                ('contact_email', models.EmailField(default='info@safari pro.com', max_length=254)),
                 ('contact_phone', models.CharField(default='+255...', max_length=20)),
                 ('whatsapp_number', models.CharField(blank=True, max_length=20)),
                 ('office_address', models.TextField(blank=True)),
