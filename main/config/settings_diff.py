@@ -1,6 +1,6 @@
 # config/settings_diff.py
 #
-# STRUCTURED ADVENTURES — settings changes from the visitkili base
+# STRUCTURED ADVENTURES — settings changes from the safari pro base
 # Apply these changes on top of your existing config/settings.py
 # ──────────────────────────────────────────────────────────────────
 #
