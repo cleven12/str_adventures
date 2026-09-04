@@ -1,0 +1,1 @@
+# apps/tours/seo_admin.py
