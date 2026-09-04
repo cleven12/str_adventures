@@ -7,7 +7,7 @@ from django.urls import reverse
 
 @override_settings(
     ALLOWED_HOSTS=['testserver', 'localhost', '127.0.0.1'],
-    SITE_DOMAIN='v2.visitkili.com',
+    SITE_DOMAIN='v2.safari pro.com',
 )
 class SEOPublicSurfaceTests(TestCase):
     def setUp(self):
