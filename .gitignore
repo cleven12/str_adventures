@@ -30,3 +30,6 @@ AGENTS.md
 CLAUDE.md
 .claude/
 .idea/
+
+# Local API-client workspace (Bruno) — not project source.
+/api/
