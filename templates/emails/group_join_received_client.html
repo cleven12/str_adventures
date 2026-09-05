@@ -1,0 +1,55 @@
+{% extends "emails/_base.html" %}
+{% block content %}
+<p class="greeting">Hi {{ member.full_name|title }} 👋</p>
+<p class="intro">
+  We've received your request to join <strong>{{ group.title }}</strong>.
+  Our team will review it and get back to you within <strong>24 hours</strong>.
+</p>
+
+<div class="ref-box">
+  <div class="label">Your Request Reference</div>
+  <div class="value">{{ member.member_id }}</div>
+</div>
+
+<table class="detail-table">
+  <tr>
+    <td class="label">Group</td>
+    <td class="val">{{ group.title }}</td>
+  </tr>
+  <tr>
+    <td class="label">Tour</td>
+    <td class="val">{{ tour.title }}</td>
+  </tr>
+  <tr>
+    <td class="label">Start Date</td>
+    <td class="val">{{ group.start_date|date:"d F Y" }}</td>
+  </tr>
+  <tr>
+    <td class="label">Party Size</td>
+    <td class="val">{{ member.party_size }} person{{ member.party_size|pluralize }}</td>
+  </tr>
+  <tr>
+    <td class="label">Price Per Person</td>
+    <td class="val">${{ group.price_per_person }} USD</td>
+  </tr>
+  <tr>
+    <td class="label">Total Estimate</td>
+    <td class="val" style="font-weight:800;">${{ member.total_price }} USD</td>
+  </tr>
+</table>
+
+<div class="info-box">
+  <p>
+    <strong>What happens next?</strong><br>
+    Our team will confirm your spot and contact you with a secure payment link.
+    No payment is required right now — we'll reach out within 24 hours.
+  </p>
+</div>
+
+{% if WHATSAPP_NUMBER %}
+<a href="https://wa.me/{{ WHATSAPP_NUMBER|cut:'+' }}?text=Hi%2C%20my%20group%20join%20reference%20is%20{{ member.member_id }}"
+   class="whatsapp-btn">
+  Questions? Chat on WhatsApp
+</a>
+{% endif %}
+{% endblock %}
