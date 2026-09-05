@@ -1,0 +1,63 @@
+{% extends "emails/_base.html" %}
+{% block content %}
+<p class="greeting">Hi {{ booking.full_name|title }} 👋</p>
+<p class="intro">
+  Thank you for your interest in <strong>{{ tour.title }}</strong> with {{ SITE_NAME }}.
+  We've received your enquiry and our team will review it and get back to you within <strong>24 hours</strong>.
+</p>
+
+<div class="ref-box">
+  <div class="label">Your Booking Reference</div>
+  <div class="value">{{ booking.booking_ref }}</div>
+</div>
+
+<table class="detail-table">
+  <tr>
+    <td class="label">Tour</td>
+    <td class="val">{{ tour.title }}</td>
+  </tr>
+  <tr>
+    <td class="label">Travel Date</td>
+    <td class="val">
+      {{ booking.travel_date|date:"d F Y" }}
+      {% if booking.flexible_dates %} <em style="color:#94a3b8;">(flexible)</em>{% endif %}
+    </td>
+  </tr>
+  <tr>
+    <td class="label">Group Size</td>
+    <td class="val">{{ booking.num_people }} person{{ booking.num_people|pluralize }}</td>
+  </tr>
+  <tr>
+    <td class="label">Contact</td>
+    <td class="val">{{ booking.email }}{% if booking.phone_number %} / {{ booking.phone_number }}{% endif %}</td>
+  </tr>
+  {% if booking.message %}
+  <tr>
+    <td class="label">Your Note</td>
+    <td class="val">{{ booking.message|truncatewords:30 }}</td>
+  </tr>
+  {% endif %}
+</table>
+
+<div class="info-box">
+  <p>
+    <strong>What happens next?</strong><br>
+    Our team will review your dates, confirm availability, and contact you via
+    <strong>
+      {% if booking.preferred_contact == 'whatsapp' %}WhatsApp
+      {% elif booking.preferred_contact == 'phone' %}Phone
+      {% else %}Email{% endif %}
+    </strong>
+    to discuss your trip and pricing.
+    Once agreed, we'll send you a secure payment link.
+  </p>
+</div>
+
+{% if WHATSAPP_NUMBER %}
+<p style="font-size:14px;color:#4b5563;">Need to reach us sooner? We're usually available on WhatsApp:</p>
+<a href="https://wa.me/{{ WHATSAPP_NUMBER|cut:'+' }}?text=Hi%2C%20my%20booking%20ref%20is%20{{ booking.booking_ref }}"
+   class="whatsapp-btn">
+  Chat on WhatsApp
+</a>
+{% endif %}
+{% endblock %}
