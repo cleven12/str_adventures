@@ -3,11 +3,17 @@ node_modules/
 out/
 build/
 .env
+.env.*
 .env.local
 .env*.local
 *.log
+*.log.*
+logs/
+tmp/
+venv
 .DS_Store
 .vercel/
+__pycache__/
 *.db
 *.db-*
 /media
@@ -22,3 +28,8 @@ tsconfig.tsbuildinfo
 # AI coding agent config — not tracked in this repo.
 AGENTS.md
 CLAUDE.md
+.claude/
+.idea/
+
+# Local API-client workspace (Bruno) — not project source.
+/api/
