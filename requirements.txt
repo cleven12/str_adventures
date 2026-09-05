@@ -14,7 +14,7 @@ mysqlclient==2.2.8       # MySQL/MariaDB (production)
 
 # Image & media
 Pillow==12.2.0
-cloudinary==1.44.2
+cloudinary==1.46.2
 django-cloudinary-storage==0.3.0
 
 # Admin theme
