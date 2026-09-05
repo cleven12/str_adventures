@@ -4,9 +4,9 @@ name: Deploy (DigitalOcean VPS)
 # ahead of time; it will fail on the missing secrets below until the VPS exists and
 # they're added under Settings -> Secrets and variables -> Actions:
 #   DO_HOST        — VPS IP or hostname
-#   DO_SSH_USER     — deploy user on the VPS
-#   DO_SSH_KEY      — private key with access to that user
-#   DO_APP_DIR      — absolute path to this app's checkout on the VPS
+#   DO_SSH_USER    — deploy user on the VPS
+#   DO_SSH_KEY     — private key with access to that user
+#   DO_APP_DIR     — absolute path to this app's checkout on the VPS
 on:
   workflow_dispatch: {}
 
@@ -24,6 +24,6 @@ jobs:
             set -e
             cd "${{ secrets.DO_APP_DIR }}"
             git pull origin main
-            pnpm install --frozen-lockfile
-            pnpm build
-            pm2 reload structured-advent || pm2 start pnpm --name structured-advent -- start
+            docker compose pull
+            docker compose up -d --build
+            docker compose exec -T api python manage.py migrate --noinput
