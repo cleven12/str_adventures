@@ -4,7 +4,7 @@
 
 ## Checklist
 
-- [ ] `pnpm lint` passes
-- [ ] `pnpm test` passes
-- [ ] `pnpm build` passes
-- [ ] I followed the existing patterns for the area I touched (see `CONTRIBUTING.md`)
+- [ ] `python manage.py check` passes
+- [ ] `python manage.py test` passes
+- [ ] Migrations included for any model changes
+- [ ] I followed the existing patterns for the area I touched

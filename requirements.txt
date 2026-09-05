@@ -35,6 +35,9 @@ django-cors-headers==4.4.0
 # Static files
 whitenoise
 
+# Production WSGI server (used by Dockerfile)
+gunicorn==23.0.0
+
 # Content processing
 markdown
 bleach

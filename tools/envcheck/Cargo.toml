@@ -1,0 +1,8 @@
+[package]
+name = "envcheck"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "envcheck"
+path = "src/main.rs"

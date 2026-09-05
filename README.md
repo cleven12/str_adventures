@@ -20,6 +20,12 @@ python manage.py createsuperuser
 python manage.py runserver
 ```
 
+## Docker
+
+```bash
+docker compose up --build
+```
+
 ## Notes
 
 - API is served under `/api/v1/`.
