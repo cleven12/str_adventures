@@ -1,0 +1,8 @@
+{
+  "name": "@structuredadventures/api-types",
+  "version": "0.1.0",
+  "private": true,
+  "description": "TypeScript types for the Structured Adventures API, hand-matched to apps/*/serializers.py",
+  "main": "index.ts",
+  "types": "index.ts"
+}
