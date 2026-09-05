@@ -33,3 +33,7 @@ CLAUDE.md
 
 # Local API-client workspace (Bruno) — not project source.
 /api/
+
+# tools/ build artifacts
+target/
+.bundle/
