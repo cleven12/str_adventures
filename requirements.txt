@@ -30,7 +30,7 @@ django-countries==8.2.0
 djangorestframework==3.17.1
 django-filter==24.3
 drf-spectacular==0.27.2
-django-cors-headers==4.4.0
+django-cors-headers==4.9.0
 
 # Static files
 whitenoise
