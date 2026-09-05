@@ -17,9 +17,8 @@ What you expected to happen instead.
 
 **Environment**
 - OS:
-- Node version:
-- pnpm version:
-- Browser (if frontend issue):
+- Python version:
+- Django version:
 
 **Additional context**
 Logs, screenshots, or anything else that helps.
