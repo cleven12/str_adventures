@@ -1,0 +1,636 @@
+# synced by .github/workflows/labels.yml
+# ============================================================
+# ISSUE / PR TYPE
+# ============================================================
+
+- name: bug
+  color: d73a4a
+  description: Something isn't working
+
+- name: documentation
+  color: 0075ca
+  description: Improvements or additions to documentation
+
+- name: duplicate
+  color: cfd3d7
+  description: This issue or pull request already exists
+
+- name: enhancement
+  color: a2eeef
+  description: New feature or request
+
+- name: good first issue
+  color: 7057ff
+  description: Good for newcomers
+
+- name: help wanted
+  color: "008672"
+  description: Extra attention is needed
+
+- name: invalid
+  color: e4e669
+  description: This doesn't seem right
+
+- name: question
+  color: d876e3
+  description: Further information is requested
+
+- name: wontfix
+  color: ffffff
+  description: This will not be worked on
+
+- name: refactor
+  color: 6f42c1
+  description: Code restructuring without changing behavior
+
+- name: chore
+  color: 6b7280
+  description: Maintenance or housekeeping task
+
+- name: spike
+  color: 5319e7
+  description: Research or technical investigation
+
+- name: proposal
+  color: 0366d6
+  description: Proposed change requiring discussion
+
+# ============================================================
+# Eng Area
+# ============================================================
+
+- name: frontend
+  color: 61dafb
+  description: Frontend, UI, and client-side changes
+
+- name: backend
+  color: 0e8a16
+  description: Backend, APIs, and server-side changes
+
+- name: api
+  color: 1d76db
+  description: API endpoints, contracts, and integrations
+
+- name: database
+  color: 0052cc
+  description: Database schema, queries, migrations, or optimization
+
+- name: auth
+  color: b60205
+  description: Authentication, authorization, sessions, or permissions
+
+- name: security
+  color: ee0701
+  description: Security improvements or vulnerabilities
+
+- name: testing
+  color: fbca04
+  description: Tests, test infrastructure, or test coverage
+
+- name: performance
+  color: ff7619
+  description: Performance, speed, or resource optimization
+
+- name: accessibility
+  color: c2e0c6
+  description: Accessibility and inclusive user experience
+
+- name: ux
+  color: f9d0c4
+  description: User experience improvements
+
+- name: ui
+  color: d4c5f9
+  description: User interface and visual design changes
+
+- name: mobile
+  color: 7057ff
+  description: Mobile application or mobile-specific changes
+
+- name: seo
+  color: 1D76DB
+  description: SEO, indexing, and Search Console fixes
+
+- name: content
+  color: 0E8A16
+  description: Copy, FAQ, and content expansion
+
+- name: images
+  color: FEF2C0
+  description: Image optimization / Cloudinary
+
+# ============================================================
+# infra
+# ============================================================
+
+- name: devops
+  color: 5319E7
+  description: DevOps engineering and automation
+
+- name: infra
+  color: "5319E7"
+  description: CI/CD, deployment, hosting
+
+- name: ci
+  color: 1d76db
+  description: Continuous integration pipelines
+
+- name: cd
+  color: 0052cc
+  description: Continuous deployment and release automation
+
+- name: ci-cd
+  color: 5319e7
+  description: CI/CD pipeline changes
+
+- name: deployment
+  color: bfd4f2
+  description: Application deployment changes
+
+- name: cpanel-deploy
+  color: BFD4F2
+  description: cPanel Git deployment and hosting config
+
+- name: docker
+  color: 2496ed
+  description: Docker containers and container configuration
+
+- name: kubernetes
+  color: 326ce5
+  description: Kubernetes configuration and workloads
+
+- name: cloud
+  color: 0366d6
+  description: Cloud infrastructure and services
+
+- name: hosting
+  color: 5319e7
+  description: Hosting and server configuration
+
+- name: server
+  color: 6f42c1
+  description: Server configuration and maintenance
+
+- name: networking
+  color: 0366d6
+  description: Networking, DNS, proxies, and connectivity
+
+- name: dns
+  color: 1d76db
+  description: DNS and domain configuration
+
+- name: ssl
+  color: b60205
+  description: SSL, TLS, certificates, and HTTPS
+
+- name: monitoring
+  color: 0e8a16
+  description: Monitoring, metrics, and observability
+
+- name: logging
+  color: 6b7280
+  description: Application and infrastructure logging
+
+- name: observability
+  color: 5319e7
+  description: Logs, metrics, traces, and system visibility
+
+- name: backup
+  color: 0052cc
+  description: Backup, restore, and disaster recovery
+
+- name: disaster-recovery
+  color: b60205
+  description: Disaster recovery and business continuity
+
+- name: secrets
+  color: ee0701
+  description: Secrets, credentials, and environment configuration
+
+- name: environment
+  color: cfd3d7
+  description: Environment variables and environment configuration
+
+# ============================================================
+# platform
+# ============================================================
+
+- name: aws
+  color: ff9900
+  description: Amazon Web Services related changes
+
+- name: azure
+  color: 0078d4
+  description: Microsoft Azure related changes
+
+- name: gcp
+  color: 4285f4
+  description: Google Cloud Platform related changes
+
+- name: digitalocean
+  color: 0080ff
+  description: DigitalOcean infrastructure or deployment
+
+- name: vercel
+  color: 000000
+  description: Vercel deployment or configuration
+
+- name: netlify
+  color: 00c7b7
+  description: Netlify deployment or configuration
+
+# ============================================================
+# dev & code quality
+# ============================================================
+
+- name: code-quality
+  color: 0e8a16
+  description: Code quality and maintainability improvements
+
+- name: technical-debt
+  color: fbca04
+  description: Technical debt requiring cleanup or improvement
+
+- name: dependency
+  color: 0366d6
+  description: Dependency updates or dependency-related issues
+
+- name: dependencies
+  color: 0366d6
+  description: Dependency management and package updates
+
+- name: breaking-change
+  color: b60205
+  description: Introduces a breaking API or behavior change
+
+- name: migration
+  color: 0052cc
+  description: Data, framework, or infrastructure migration
+
+- name: compatibility
+  color: cfd3d7
+  description: Compatibility with platforms, browsers, or versions
+
+- name: configuration
+  color: c5def5
+  description: Configuration changes
+
+- name: tooling
+  color: 6f42c1
+  description: Developer tooling and development environment
+
+- name: automation
+  color: 5319e7
+  description: Automated workflows or repetitive task automation
+
+- name: script
+  color: 6b7280
+  description: Scripts and command-line utilities
+
+- name: cli
+  color: 0366d6
+  description: Command-line interface changes
+
+# ============================================================
+# tech stack
+# ============================================================
+
+- name: python
+  color: 3572A5
+  description: Python-related changes
+
+- name: django
+  color: 092E20
+  description: Django-related changes
+
+- name: javascript
+  color: f1e05a
+  description: JavaScript-related changes
+
+- name: typescript
+  color: 3178c6
+  description: TypeScript-related changes
+
+- name: react
+  color: 61dafb
+  description: React-related changes
+
+- name: nextjs
+  color: 000000
+  description: Next.js-related changes
+
+- name: tailwind
+  color: 06b6d4
+  description: Tailwind CSS-related changes
+
+- name: mysql
+  color: 4479a1
+  description: MySQL-related changes
+
+- name: postgresql
+  color: 336791
+  description: PostgreSQL-related changes
+
+- name: redis
+  color: dc382d
+  description: Redis-related changes
+
+# ============================================================
+# release
+# ============================================================
+
+- name: release
+  color: 5319E7
+  description: Release preparation or release management
+
+- name: release-blocker
+  color: b60205
+  description: Issue blocking a release
+
+- name: hotfix
+  color: d73a4a
+  description: Urgent production fix
+
+- name: rollback
+  color: b60205
+  description: Reverting a deployed change
+
+- name: patch
+  color: cfd3d7
+  description: Small corrective release
+
+- name: major
+  color: b60205
+  description: Major version or breaking release
+
+- name: minor
+  color: 0e8a16
+  description: Minor feature release
+
+# ============================================================
+# priority
+# ============================================================
+
+- name: priority-critical
+  color: b60205
+  description: Critical issue requiring immediate attention
+
+- name: priority-high
+  color: d93f0b
+  description: High priority issue
+
+- name: priority-medium
+  color: fbca04
+  description: Medium priority issue
+
+- name: priority-low
+  color: cfd3d7
+  description: Low priority issue
+
+# ============================================================
+#status / workflows
+# ============================================================
+
+- name: status-planned
+  color: c5def5
+  description: Planned for future work
+
+- name: status-in-progress
+  color: fbca04
+  description: Currently being worked on
+
+- name: status-review
+  color: 1d76db
+  description: Awaiting review
+
+- name: status-blocked
+  color: b60205
+  description: Blocked by another issue or dependency
+
+- name: status-ready
+  color: 0e8a16
+  description: Ready to be worked on
+
+- name: status-testing
+  color: 5319e7
+  description: Currently undergoing testing
+
+- name: status-deployed
+  color: 0e8a16
+  description: Change has been deployed
+
+# ============================================================
+# scope
+# ============================================================
+
+- name: production
+  color: b60205
+  description: Affects the production environment
+
+- name: staging
+  color: fbca04
+  description: Affects the staging environment
+
+- name: development
+  color: c5def5
+  description: Development environment changes
+
+- name: infrastructure
+  color: 5319e7
+  description: Infrastructure-level changes
+
+- name: database-schema
+  color: 0052cc
+  description: Database schema changes
+
+- name: data
+  color: 0e8a16
+  description: Data processing, transformation, or integrity
+
+# ============================================================
+# sec
+# ============================================================
+
+- name: vulnerability
+  color: b60205
+  description: Security vulnerability
+
+- name: dependency-security
+  color: ee0701
+  description: Security issue caused by a dependency
+
+- name: security-hardening
+  color: 5319e7
+  description: Security hardening and defensive improvements
+
+- name: privacy
+  color: 6f42c1
+  description: Privacy and data protection
+
+- name: permissions
+  color: b60205
+  description: Access control and permission changes
+
+# ============================================================
+# product
+# ============================================================
+
+- name: feature
+  color: a2eeef
+  description: New product or application feature
+
+- name: product
+  color: 7057ff
+  description: Product-level change
+
+- name: pricing
+  color: AD1356
+  description: Pricing or price-related changes
+
+- name: price
+  color: AD1356
+  description: Price-related content or functionality
+
+- name: payment
+  color: 0e8a16
+  description: Payment processing and payment integrations
+
+- name: integration
+  color: 0366d6
+  description: Third-party or external service integration
+
+- name: analytics
+  color: 5319e7
+  description: Analytics, tracking, or reporting
+
+# ============================================================
+# content
+# ============================================================
+
+- name: indexing
+  color: 1d76db
+  description: Search engine indexing issues
+
+- name: google-search-console
+  color: 4285f4
+  description: Google Search Console related work
+
+- name: metadata
+  color: c5def5
+  description: Meta tags, structured metadata, and SEO metadata
+
+- name: schema
+  color: 0e8a16
+  description: Structured data and Schema.org implementation
+
+- name: sitemap
+  color: 1d76db
+  description: Sitemap generation or indexing
+
+- name: robots
+  color: 5319e7
+  description: Robots.txt and crawler directives
+
+- name: backlinks
+  color: 0366d6
+  description: Backlink and link-building related work
+
+- name: internal-links
+  color: 0e8a16
+  description: Internal linking improvements
+
+# ============================================================
+# media
+# ============================================================
+
+- name: image-optimization
+  color: FEF2C0
+  description: Image compression, resizing, or optimization
+
+- name: cloudinary
+  color: 3448c5
+  description: Cloudinary media management
+
+- name: media
+  color: c5def5
+  description: Images, video, audio, and media assets
+
+# ============================================================
+# waves
+# ============================================================
+
+- name: wave-1
+  color: B60205
+  description: Urgent SEO recovery batch
+
+- name: wave-2
+  color: FBCA04
+  description: CI/CD and automated validation batch
+
+- name: wave-3
+  color: C5DEF5
+  description: "Deferred: Cloudinary, reorg, backlinks"
+
+- name: v0
+  color: ededed
+  description: Initial version or prototype scope
+
+# ============================================================
+# comminity
+# ============================================================
+
+- name: good-for-contributors
+  color: 7057ff
+  description: Suitable for community contributors
+
+- name: mentorship
+  color: d876e3
+  description: Issue suitable for mentorship
+
+- name: discussion
+  color: d876e3
+  description: Requires discussion before implementation
+
+- name: feedback
+  color: a2eeef
+  description: User or contributor feedback
+
+- name: needs-reproduction
+  color: fbca04
+  description: Bug needs reproducible steps
+
+- name: needs-investigation
+  color: 5319e7
+  description: Requires further investigation
+
+# ============================================================
+# SPECIAL
+# ============================================================
+
+- name: urgent
+  color: b60205
+  description: Requires immediate attention
+
+- name: blocked
+  color: b60205
+  description: Work cannot continue due to a blocker
+
+- name: regression
+  color: d73a4a
+  description: Previously working functionality is broken
+
+- name: cleanup
+  color: cfd3d7
+  description: Cleanup or housekeeping work
+
+- name: deprecated
+  color: cfd3d7
+  description: Deprecated functionality or technology
+
+- name: experimental
+  color: d876e3
+  description: Experimental or proof-of-concept work
+
+- name: breaking
+  color: b60205
+  description: Breaking change requiring migration or user action
